@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import './styles.css';
+import Header from './header';
+import ChatArea from './ChatArea';
+import ChatFooter from './ChatFooter';
+import { useState } from 'react';
 
 function App() {
+  const [messages, setMessages] = useState([]);
+
+  const addMessage = (sender, text) => {
+    setMessages((prev) => [...prev, { sender, text }]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="animated-background"></div>
+      <Header />
+      <ChatArea messages={messages} />
+      <ChatFooter addMessage={addMessage} />
     </div>
   );
 }
