@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Header() {
 
   const redirectToLandingPage = () =>{
-    window.location.href = "https://mgagan544.github.io/TVS_ChatBot/sample.html";
+    window.location.href = "https://mgagan544.github.io/TVS_WEBSITE/sample.html";
   }
   return (
     <header className="header">
